@@ -1,0 +1,74 @@
+.footer {
+  background: var(--white);
+  padding: 0 0 2rem;
+}
+
+.footer__rule {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+
+/* ── Grid ── Figma: 4 columns */
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Column title */
+.footer__col-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.01em;
+}
+
+/* Links list */
+.footer__col-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer__link {
+  font-size: 0.875rem;
+  color: var(--mid);
+  transition: color 0.2s;
+  display: block;
+  font-style: normal;
+}
+.footer__link:hover { color: var(--dark); }
+
+/* Contact column */
+.footer__address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.footer__address p {
+  font-size: 0.875rem;
+  color: var(--mid);
+  line-height: 1.6;
+}
+
+/* ── Bottom bar ── */
+.footer__bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 500px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 1.5rem 1rem; }
+  .footer__col--contact { grid-column: 1 / -1; }
+}
