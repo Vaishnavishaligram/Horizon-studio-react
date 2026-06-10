@@ -1,0 +1,101 @@
+.testi {
+  padding: 5rem 0 4rem;
+  background: var(--white);
+}
+
+/* ── Heading ── */
+.testi__heading {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.25;
+  color: var(--dark);
+  margin-bottom: 3.5rem;
+  letter-spacing: -0.01em;
+}
+
+/* Yellow/orange underline — Figma shows wavy/solid underline on "About Us" */
+.testi__heading-ul {
+  display: inline-block;
+  position: relative;
+}
+.testi__heading-ul::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: var(--yellow);
+  border-radius: 2px;
+  margin-top: 2px;
+}
+
+/* ── Stage: the area containing photos + card ── */
+.testi__stage {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 120px;   /* room for left/right photos */
+}
+
+/* ── Scattered photos ── */
+.testi__photo {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  transition: transform 0.25s var(--ease);
+  user-select: none;
+  z-index: 1;
+}
+.testi__photo:hover { transform: scale(1.07); }
+
+/* ── Quote card ──
+   Figma: rounded rectangle, mint/sage green background, centred
+   large opening " top-left, large closing " bottom-right
+*/
+.testi__card {
+  background: var(--mint);
+  border-radius: 18px;
+  padding: 3rem 3.5rem;
+  max-width: 560px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.testi__card-open,
+.testi__card-close {
+  font-family: var(--serif);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--muted);
+  opacity: 0.35;
+  position: absolute;
+  pointer-events: none;
+}
+.testi__card-open  { top: 0.8rem;    left: 1.2rem;  }
+.testi__card-close { bottom: 0.5rem; right: 1.2rem; }
+
+.testi__quote {
+  font-size: 0.92rem;
+  color: var(--mid);
+  line-height: 1.78;
+  font-style: normal;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .testi__stage { padding: 0; flex-direction: column; min-height: auto; gap: 2rem; }
+  .testi__photo { display: none; }  /* hide scattered photos on mobile, show card only */
+  .testi__card  { max-width: 100%; }
+}
